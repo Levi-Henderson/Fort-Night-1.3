@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh36kww8ios5y"]
+
+[ext_resource type="Script" path="res://Scripts/story.gd" id="1_ya30v"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ya30v")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_right = 1926.0
+offset_bottom = 214.0
+text = "In the depths of the night, a lone kitty battles against the terrors of  the modern society. It's a tough life for Milo.  Tuna is only supplied to her as long as she defeats the vicious gangs sleuthing around the streets of Night City. These gangs are equiped
+ with high-tech augmentations provided by their mysterious benefactors. Luckly for Milo, her government-issued laser  eyeballs are more than a match for the dangerous monsters of the night.
+
+Armed with her deadly laser eyes, and skills that would make any grown man terrified, Milo is Night City's final hope at stopping the gangs who terrorise the city.
+
+Milo needs to get to work..."
+
+[node name="continue" type="Button" parent="."]
+layout_mode = 0
+offset_left = 873.0
+offset_top = 393.0
+offset_right = 1122.0
+offset_bottom = 457.0
+text = "Continue"
+
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]

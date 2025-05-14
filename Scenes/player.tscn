@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2we85cenbwrj"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_vnv7i"]
+[ext_resource type="Texture2D" uid="uid://v5v8hsqooi8d" path="res://Textures/kitty1.png" id="2_jrpw1"]
+[ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="3_6pkui"]
+[ext_resource type="PackedScene" uid="uid://dkqqn6udbu2j5" path="res://Scenes/gun.tscn" id="4_mcajo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0iatd"]
+radius = 6.52448
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mp3ci"]
+radius = 13.049
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
+modulate = Color(1, 0.917647, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(259, 120)
+scale = Vector2(0.766345, 0.711081)
+script = ExtResource("1_vnv7i")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
+position = Vector2(1.90735e-06, -5.24521e-06)
+shape = SubResource("CircleShape2D_0iatd")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(0.500006, -0.500005)
+scale = Vector2(1.02344, 0.992188)
+texture = ExtResource("2_jrpw1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.095
+script = ExtResource("3_6pkui")
+metadata/_edit_group_ = true
+
+[node name="gun" parent="." instance=ExtResource("4_mcajo")]
+
+[node name="hitbox" type="Area2D" parent="." groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" groups=["player"]]
+shape = SubResource("CircleShape2D_mp3ci")
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

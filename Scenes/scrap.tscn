@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5ye7xeqv07as"]
+
+[ext_resource type="Texture2D" uid="uid://iwpfdijlco5x" path="res://Textures/terrorist.png" id="1_75tmy"]
+[ext_resource type="Script" path="res://Scripts/scrap.gd" id="1_l00as"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4b2w"]
+radius = 260.0
+
+[node name="scrap" type="Area2D"]
+script = ExtResource("1_l00as")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.915868, 0.118315, 0, 1)
+self_modulate = Color(1, 0.192157, 0.309804, 1)
+position = Vector2(4.76837e-07, 9.53674e-07)
+scale = Vector2(0.0703125, 0.078125)
+texture = ExtResource("1_75tmy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.05, 0.05)
+shape = SubResource("CircleShape2D_y4b2w")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

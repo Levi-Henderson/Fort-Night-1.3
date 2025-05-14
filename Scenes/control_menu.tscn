@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3sdkoxoqo7sc"]
+
+[ext_resource type="Script" path="res://Scenes/control_menu.gd" id="1_w5pvy"]
+
+[node name="Control Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 420.0
+offset_top = 71.0
+offset_right = 420.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w5pvy")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 249.0
+offset_right = 493.0
+offset_bottom = 454.0
+scale = Vector2(1.18331, 1.58294)
+text = "                              CONTROLS
+
+W - Move Forward
+A - Move Left
+S - Move Back                              
+D - Move Right"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 372.0
+offset_right = 694.0
+offset_bottom = 577.0
+scale = Vector2(1.18331, 1.58294)
+text = "
+Shift - Sprint
+Dash - Spacebar"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 515.0
+offset_right = 595.0
+offset_bottom = 720.0
+scale = Vector2(1.18331, 1.58294)
+text = "Laser aiming - Mouse"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 592.0
+offset_right = 602.0
+offset_bottom = 627.0
+text = "BACK"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

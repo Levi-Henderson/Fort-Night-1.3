@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://1wnuws4dbpk7"]
+
+[ext_resource type="Script" path="res://Scenes/platform.gd" id="1_67wkk"]
+[ext_resource type="Texture2D" uid="uid://to3hss48xtpv" path="res://Textures/icon.svg" id="1_bp1kf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iahy3"]
+size = Vector2(129, 130)
+
+[node name="platform" type="StaticBody2D"]
+z_index = 1
+position = Vector2(46, -170)
+rotation = 0.0010995
+scale = Vector2(1.19383, -0.0797928)
+script = ExtResource("1_67wkk")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.29173, 30.2238)
+scale = Vector2(1.1102, -1.89707)
+shape = SubResource("RectangleShape2D_iahy3")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("1_bp1kf")

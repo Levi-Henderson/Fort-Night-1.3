@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvfxu0cex2v5d"]
+
+[ext_resource type="Script" path="res://Scripts/skill_tree.gd" id="1_eak2v"]
+[ext_resource type="PackedScene" uid="uid://bhiei8othwtl6" path="res://Scenes/skill_button.tscn" id="1_mcnnw"]
+[ext_resource type="Texture2D" uid="uid://bisan1s65sn7d" path="res://Textures/GUN.png" id="2_oh5qv"]
+[ext_resource type="Texture2D" uid="uid://dctvevoxusdd1" path="res://Textures/TREADMILL.png" id="3_wrs5x"]
+[ext_resource type="Script" path="res://Scripts/button.gd" id="5_85wlj"]
+
+[node name="SkillTree" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 211.0
+offset_bottom = 131.0
+script = ExtResource("1_eak2v")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 10.2512
+anchor_bottom = 10.0153
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1273.0
+offset_top = 966.0
+offset_right = 1456.0
+offset_bottom = 1039.0
+text = "BACK"
+script = ExtResource("5_85wlj")
+
+[node name="SkillButton" parent="." instance=ExtResource("1_mcnnw")]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.383
+anchor_bottom = 0.5
+offset_left = 873.0
+offset_top = 710.0
+offset_right = 833.187
+offset_bottom = 685.5
+scale = Vector2(4.02028, 4.01076)
+metadata/_edit_group_ = true
+
+[node name="SkillButton" parent="SkillButton" instance=ExtResource("1_mcnnw")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.153
+anchor_top = 0.117
+anchor_right = 0.902
+anchor_bottom = 0.862
+offset_left = 42.727
+offset_top = -55.797
+offset_right = 53.018
+offset_bottom = -45.342
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+texture_normal = ExtResource("2_oh5qv")
+
+[node name="SkillButton" parent="SkillButton/SkillButton" instance=ExtResource("1_mcnnw")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 42.5
+offset_top = -86.5
+offset_right = 83.5
+offset_bottom = -45.5
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+texture_normal = ExtResource("2_oh5qv")
+
+[node name="SkillButton2" parent="SkillButton" instance=ExtResource("1_mcnnw")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = -68.5
+offset_right = -50.5
+offset_bottom = -27.5
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+texture_normal = ExtResource("3_wrs5x")
+
+[node name="SkillButton" parent="SkillButton/SkillButton2" instance=ExtResource("1_mcnnw")]
+layout_mode = 0
+anchor_left = 1.31707
+anchor_top = -1.68293
+anchor_right = 2.31707
+anchor_bottom = -0.682927
+offset_right = 0.0
+offset_bottom = 0.0
+disabled = true
+texture_normal = ExtResource("3_wrs5x")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://oprvgtx6p3iq"]
+
+[ext_resource type="PackedScene" uid="uid://1wnuws4dbpk7" path="res://Scenes/platform.tscn" id="1_738rt"]
+[ext_resource type="PackedScene" uid="uid://d2we85cenbwrj" path="res://Scenes/player.tscn" id="2_4b8lw"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="platform" parent="." instance=ExtResource("1_738rt")]
+position = Vector2(59, 91)
+scale = Vector2(121.053, -0.384489)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_4b8lw")]
+position = Vector2(10, -153)
+
+[node name="platform2" parent="." instance=ExtResource("1_738rt")]
+position = Vector2(562, -11)
+scale = Vector2(2.03241, 0.503922)
+
+[node name="platform3" parent="." instance=ExtResource("1_738rt")]
+position = Vector2(1390, 49)
+rotation = -0.577957
+scale = Vector2(1.70659, -0.496297)
+
+[node name="platform4" parent="." instance=ExtResource("1_738rt")]
+position = Vector2(1901, 3)
+
+[node name="platform5" parent="." instance=ExtResource("1_738rt")]
+position = Vector2(2621, -65)
+rotation = -0.506164
+scale = Vector2(40.3922, -0.496297)
+
+[node name="platform6" parent="." instance=ExtResource("1_738rt")]
+position = Vector2(5269, -1535)
+scale = Vector2(2.73907, -0.336663)
+
+[node name="platform7" parent="." instance=ExtResource("1_738rt")]
+position = Vector2(5467, -1737)
+rotation = -1.73573

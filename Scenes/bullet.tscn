@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://clactjxpwuapo"]
+
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_lw61h"]
+[ext_resource type="Texture2D" uid="uid://dephts6fy4tfo" path="res://LASER FOR GAME 2.png" id="2_nvigk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcuqi"]
+size = Vector2(4.39872, 3.19907)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amx8w"]
+size = Vector2(6, 3.5)
+
+[node name="bullet" type="Area2D" groups=["bullet"]]
+scale = Vector2(2.50073, 2.50073)
+script = ExtResource("1_lw61h")
+metadata/_edit_group_ = true
+
+[node name="laser1" type="Sprite2D" parent="."]
+position = Vector2(0, 1.19209e-07)
+scale = Vector2(0.13653, 0.10942)
+texture = ExtResource("2_nvigk")
+
+[node name="laser2" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(0.13653, 0.10942)
+texture = ExtResource("2_nvigk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.599825, 0.799766)
+shape = SubResource("RectangleShape2D_kcuqi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.75)
+shape = SubResource("RectangleShape2D_amx8w")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
